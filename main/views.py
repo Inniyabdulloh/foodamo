@@ -46,3 +46,9 @@ class LoginView(View):
             return render(request, 'base.html')
         print(f"{user} failed to login")
         return redirect('main:register')
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('main:login')
